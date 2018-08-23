@@ -14,8 +14,8 @@
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
     "test": "lerna run test --stream",
-    "test:full-env": "docker-compose up -d tweek-blackbox && lerna run test --stream",
-    "test:docker": "docker-compose -p blackbox up js_tests",
+    "test:full-env": "docker-compose -p blackbox up -d tweek-blackbox && lerna run test --stream",
+    "test:docker": "docker-compose -p blackbox up --exit-code-from js_tests js_tests",
     "precommit": "lint-staged"
   },
   "prettier": {
